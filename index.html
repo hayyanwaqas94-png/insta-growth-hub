@@ -3,875 +3,1748 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insta Growth Hub</title>
+
+<title>Insta Growth Hub | Instagram Services</title>
+
+<meta name="description"
+content="Insta Growth Hub - Instagram services, packages and WhatsApp support.">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-html{scroll-behavior:smooth}
-body{background:#080812;color:#fff;overflow-x:hidden}
 
-header{
- position:fixed;top:0;left:0;width:100%;z-index:1000;
- padding:16px 7%;display:flex;align-items:center;
- justify-content:space-between;background:rgba(8,8,18,.88);
- backdrop-filter:blur(15px);border-bottom:1px solid #24243a
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
 }
 
-.logo{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:bold}
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#07070d;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* ===== VARIABLES ===== */
+
+:root{
+--pink:#ff2d75;
+--purple:#8b5cf6;
+--orange:#ff8a00;
+--green:#25d366;
+--card:#11111b;
+--border:#272737;
+--muted:#9999aa;
+}
+
+/* ===== HEADER ===== */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+padding:15px 6%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+background:rgba(7,7,13,.78);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:11px;
+font-size:21px;
+font-weight:800;
+}
 
 .logo-icon{
- width:40px;height:40px;border-radius:12px;
- display:flex;align-items:center;justify-content:center;
- background:linear-gradient(135deg,#ff0055,#ff8a00,#833ab4);
- box-shadow:0 0 20px #833ab455;font-size:21px
+width:42px;
+height:42px;
+border-radius:13px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(135deg,#ff006a,#ff8a00,#833ab4);
+
+box-shadow:
+0 0 25px rgba(255,45,117,.35);
+
+font-size:22px;
 }
 
 .logo span{
- background:linear-gradient(90deg,#ff4d88,#a66cff);
- -webkit-background-clip:text;color:transparent
+background:
+linear-gradient(90deg,#ff4d88,#a78bfa);
+
+-webkit-background-clip:text;
+background-clip:text;
+
+color:transparent;
+}
+
+nav{
+display:flex;
+gap:25px;
 }
 
 nav a{
- color:#ddd;text-decoration:none;margin-left:25px;font-size:14px
+color:#d6d6df;
+text-decoration:none;
+font-size:14px;
+transition:.3s;
 }
 
-nav a:hover{color:#ff4d88}
+nav a:hover{
+color:#ff5c91;
+}
+
+/* ===== HERO ===== */
 
 .hero{
- min-height:100vh;padding:150px 7% 80px;
- display:flex;align-items:center;justify-content:center;text-align:center;
- background:
- radial-gradient(circle at 50% 20%,#6b1c8d55,transparent 35%),
- radial-gradient(circle at 10% 80%,#ff005522,transparent 30%),#080812
+min-height:100vh;
+
+padding:150px 6% 90px;
+
+display:grid;
+grid-template-columns:1.1fr .9fr;
+
+align-items:center;
+gap:50px;
+
+background:
+
+radial-gradient(
+circle at 20% 20%,
+rgba(139,92,246,.20),
+transparent 35%
+),
+
+radial-gradient(
+circle at 80% 30%,
+rgba(255,45,117,.13),
+transparent 30%
+),
+
+#07070d;
 }
 
 .badge{
- display:inline-block;padding:9px 18px;border:1px solid #ff4d8855;
- border-radius:30px;background:#ff4d8810;color:#ff8bb1;
- font-size:13px;margin-bottom:25px
+display:inline-flex;
+align-items:center;
+gap:8px;
+
+padding:9px 16px;
+
+border:1px solid rgba(255,45,117,.3);
+
+background:rgba(255,45,117,.08);
+
+border-radius:50px;
+
+color:#ff86ac;
+
+font-size:13px;
+
+margin-bottom:24px;
 }
 
 .hero h1{
- font-size:clamp(42px,7vw,75px);
- line-height:1.05;
- margin-bottom:22px
+font-size:clamp(45px,6vw,78px);
+line-height:1.02;
+
+margin-bottom:24px;
+
+letter-spacing:-2px;
 }
 
 .gradient{
- background:linear-gradient(90deg,#ff2d55,#ff8a00,#a855f7);
- -webkit-background-clip:text;
- color:transparent
+background:
+linear-gradient(
+90deg,
+#ff2d75,
+#ff8a00,
+#a855f7
+);
+
+-webkit-background-clip:text;
+background-clip:text;
+
+color:transparent;
 }
 
-.hero p{
- max-width:650px;
- margin:auto;
- color:#aaa;
- line-height:1.7;
- font-size:17px
+.hero-text{
+max-width:620px;
+
+color:#aaaaba;
+
+font-size:17px;
+
+line-height:1.8;
+}
+
+.hero-buttons{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
 }
 
 .btn{
- display:inline-block;
- margin-top:30px;
- padding:14px 28px;
- border-radius:30px;
- background:linear-gradient(90deg,#ff2d55,#8b35d6);
- color:#fff;
- text-decoration:none;
- font-weight:bold;
- box-shadow:0 10px 30px #ff2d5533;
- transition:.3s
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+
+margin-top:28px;
+
+padding:14px 24px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
 }
 
-.btn:hover{
- transform:translateY(-4px);
- box-shadow:0 15px 35px #ff2d5555
+.primary{
+background:
+linear-gradient(
+135deg,
+#ff2d75,
+#8b5cf6
+);
+
+color:white;
+
+box-shadow:
+0 12px 35px rgba(255,45,117,.25);
 }
 
-section{padding:90px 7%}
-
-.title{
- text-align:center;
- margin-bottom:45px
+.primary:hover{
+transform:translateY(-4px);
 }
 
-.title h2{
- font-size:38px;
- margin-bottom:10px
+.secondary{
+border:1px solid #343448;
+background:#11111b;
+color:#ddd;
 }
 
-.title p{color:#888}
+.secondary:hover{
+border-color:#ff4d88;
+}
+
+/* ===== PHONE MOCKUP ===== */
+
+.hero-visual{
+display:flex;
+justify-content:center;
+position:relative;
+}
+
+.phone{
+width:290px;
+padding:11px;
+
+border-radius:38px;
+
+background:
+linear-gradient(
+145deg,
+#292936,
+#09090f
+);
+
+border:1px solid #3c3c4e;
+
+box-shadow:
+0 30px 80px rgba(0,0,0,.6),
+0 0 60px rgba(139,92,246,.12);
+
+transform:rotate(2deg);
+}
+
+.phone-screen{
+background:#0d0d15;
+border-radius:29px;
+padding:20px 15px;
+
+min-height:500px;
+}
+
+.phone-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+margin-bottom:25px;
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.avatar{
+width:45px;
+height:45px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#ff2d75,
+#ff8a00,
+#833ab4
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-weight:bold;
+}
+
+.profile small{
+display:block;
+color:#888;
+margin-top:3px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+
+text-align:center;
+
+padding:15px 0;
+
+border-top:1px solid #252535;
+border-bottom:1px solid #252535;
+
+margin-bottom:18px;
+}
+
+.stats strong{
+font-size:18px;
+}
+
+.stats span{
+display:block;
+color:#777;
+font-size:11px;
+margin-top:4px;
+}
+
+.post{
+height:190px;
+
+border-radius:17px;
+
+background:
+linear-gradient(
+135deg,
+#ff2d75,
+#833ab4,
+#11111b
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:45px;
+
+box-shadow:
+inset 0 0 50px rgba(255,255,255,.08);
+}
+
+.phone-actions{
+display:flex;
+justify-content:space-around;
+
+padding:18px 0;
+
+color:#ddd;
+font-size:18px;
+}
+
+/* ===== SECTIONS ===== */
+
+section{
+padding:95px 6%;
+}
+
+.section-title{
+text-align:center;
+max-width:700px;
+margin:0 auto 50px;
+}
+
+.section-title h2{
+font-size:40px;
+margin-bottom:12px;
+}
+
+.section-title p{
+color:#888;
+line-height:1.7;
+}
+
+/* ===== SERVICES ===== */
 
 .services{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:20px
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
 .card{
- background:linear-gradient(145deg,#151522,#10101a);
- border:1px solid #29293c;
- border-radius:22px;
- padding:30px 20px;
- text-align:center;
- transition:.35s
+padding:30px 22px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.045),
+rgba(255,255,255,.015)
+);
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+
+position:absolute;
+
+width:100px;
+height:100px;
+
+right:-40px;
+top:-40px;
+
+background:#ff2d75;
+filter:blur(60px);
+
+opacity:.12;
 }
 
 .card:hover{
- transform:translateY(-9px);
- border-color:#ff4d88
+transform:translateY(-8px);
+
+border-color:#ff4d88;
 }
 
 .icon{
- font-size:43px;
- margin-bottom:18px
+font-size:42px;
+
+margin-bottom:18px;
 }
 
 .card h3{
- margin-bottom:10px;
- font-size:20px
+font-size:20px;
+margin-bottom:10px;
 }
 
 .card p{
- color:#999;
- font-size:14px;
- line-height:1.6
+color:#888;
+
+font-size:14px;
+
+line-height:1.7;
 }
 
+/* ===== PRICING ===== */
+
 .pricing{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:25px;
- max-width:1050px;
- margin:auto
+display:grid;
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+max-width:1050px;
+
+margin:auto;
 }
 
 .price-card{
- background:#12121d;
- border:1px solid #29293d;
- border-radius:25px;
- padding:35px 25px;
- text-align:center;
- position:relative
+background:#101019;
+
+border:1px solid #29293a;
+
+border-radius:25px;
+
+padding:35px 25px;
+
+text-align:center;
+
+position:relative;
+
+transition:.3s;
+}
+
+.price-card:hover{
+transform:translateY(-8px);
 }
 
 .price-card.popular{
- border:2px solid #ff4380;
- transform:scale(1.04)
+border:1px solid #ff397c;
+
+box-shadow:
+0 20px 60px rgba(255,45,117,.12);
 }
 
 .popular-tag{
- position:absolute;
- top:-13px;
- left:50%;
- transform:translateX(-50%);
- background:#ff4380;
- padding:6px 18px;
- border-radius:20px;
- font-size:12px;
- font-weight:bold
+position:absolute;
+
+top:-13px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:
+linear-gradient(
+90deg,
+#ff2d75,
+#8b5cf6
+);
+
+padding:7px 18px;
+
+border-radius:50px;
+
+font-size:11px;
+
+font-weight:bold;
 }
 
 .price-card h3{
- font-size:23px;
- margin-bottom:15px
+font-size:24px;
+
+margin-bottom:15px;
 }
 
 .price{
- font-size:38px;
- font-weight:bold;
- color:#ff5d92;
- margin-bottom:20px
+font-size:40px;
+
+font-weight:800;
+
+background:
+linear-gradient(
+90deg,
+#ff4d88,
+#a78bfa
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+margin-bottom:22px;
 }
 
 .price-card ul{
- list-style:none;
- color:#aaa;
- line-height:2
+list-style:none;
+
+color:#aaa;
+
+line-height:2.1;
+
+font-size:14px;
 }
 
 .price-card li::before{
- content:"✓ ";
- color:#ff5d92
+content:"✓ ";
+
+color:#ff5d92;
+
+font-weight:bold;
 }
 
+.order-btn{
+width:100%;
+margin-top:25px;
+}
+
+/* ===== HOW IT WORKS ===== */
+
 .steps{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:20px
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
 }
 
 .step{
- text-align:center;
- padding:25px
+text-align:center;
+
+padding:25px 15px;
 }
 
 .number{
- width:55px;
- height:55px;
- border-radius:50%;
- margin:0 auto 18px;
- display:flex;
- align-items:center;
- justify-content:center;
- background:linear-gradient(135deg,#ff2d55,#833ab4);
- font-weight:bold;
- font-size:20px
+width:58px;
+height:58px;
+
+margin:0 auto 18px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+#ff2d75,
+#833ab4
+);
+
+font-weight:bold;
+
+font-size:20px;
+
+box-shadow:
+0 10px 25px rgba(139,92,246,.2);
 }
 
-.step h3{margin-bottom:10px}
+.step h3{
+margin-bottom:10px;
+}
 
 .step p{
- color:#888;
- font-size:14px;
- line-height:1.5
+color:#888;
+
+font-size:14px;
+
+line-height:1.6;
 }
 
-.features{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:18px;
- max-width:1100px;
- margin:auto
+/* ===== TRUST ===== */
+
+.trust{
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:18px;
+
+max-width:1100px;
+
+margin:auto;
 }
 
-.feature{
- padding:25px;
- background:#12121d;
- border-radius:18px;
- border:1px solid #24243a;
- text-align:center
+.trust-card{
+padding:25px;
+
+text-align:center;
+
+background:#101019;
+
+border:1px solid #252537;
+
+border-radius:20px;
 }
 
-.feature div{
- font-size:30px;
- margin-bottom:10px
+.trust-icon{
+font-size:30px;
+
+margin-bottom:12px;
 }
 
-.feature p{
- color:#999;
- font-size:13px;
- margin-top:7px
+.trust-card h3{
+font-size:17px;
 }
+
+.trust-card p{
+color:#888;
+
+font-size:13px;
+
+line-height:1.6;
+
+margin-top:8px;
+}
+
+/* ===== TESTIMONIAL PLACEHOLDER ===== */
+
+.testimonials{
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+max-width:1050px;
+
+margin:auto;
+}
+
+.testimonial{
+padding:25px;
+
+background:#101019;
+
+border:1px solid #28283a;
+
+border-radius:20px;
+}
+
+.stars{
+color:#ffb52e;
+
+margin-bottom:15px;
+}
+
+.testimonial p{
+color:#aaa;
+
+line-height:1.7;
+
+font-size:14px;
+}
+
+.testimonial strong{
+display:block;
+
+margin-top:18px;
+}
+
+.testimonial small{
+color:#777;
+}
+
+/* ===== FAQ ===== */
 
 .faq{
- max-width:850px;
- margin:auto
+max-width:850px;
+
+margin:auto;
 }
 
 details{
- background:#12121d;
- border:1px solid #29293c;
- border-radius:15px;
- margin-bottom:12px;
- padding:20px
+background:#101019;
+
+border:1px solid #29293a;
+
+border-radius:17px;
+
+padding:20px;
+
+margin-bottom:12px;
+
+transition:.3s;
+}
+
+details[open]{
+border-color:#ff397c;
 }
 
 summary{
- cursor:pointer;
- font-weight:bold
+cursor:pointer;
+
+font-weight:bold;
 }
 
 details p{
- color:#999;
- margin-top:15px;
- line-height:1.6
+color:#888;
+
+line-height:1.7;
+
+margin-top:15px;
+
+font-size:14px;
 }
+
+/* ===== CONTACT ===== */
 
 .contact{
- text-align:center;
- background:
- radial-gradient(circle at center,#4d145c55,transparent 45%),#10101a
+text-align:center;
+
+background:
+radial-gradient(
+circle at center,
+rgba(139,92,246,.16),
+transparent 45%
+),
+
+#0c0c14;
 }
 
-.contact p{
- color:#999;
- margin-top:10px
+.contact-box{
+max-width:750px;
+
+margin:auto;
+
+padding:45px 25px;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.015)
+);
+
+border:1px solid #2b2b3e;
 }
+
+.contact-box h2{
+font-size:40px;
+
+margin-bottom:15px;
+}
+
+.contact-box p{
+color:#999;
+
+line-height:1.7;
+}
+
+/* ===== FOOTER ===== */
 
 footer{
- padding:30px;
- text-align:center;
- background:#050509;
- color:#666;
- font-size:13px
+padding:35px 6%;
+
+background:#050508;
+
+text-align:center;
+
+color:#666;
+
+font-size:13px;
 }
+
+.footer-brand{
+color:#ff5c91;
+
+font-weight:bold;
+}
+
+/* ===== WHATSAPP ===== */
 
 .whatsapp{
- position:fixed;
- right:20px;
- bottom:20px;
- width:60px;
- height:60px;
- border-radius:50%;
- background:#25D366;
- display:flex;
- align-items:center;
- justify-content:center;
- font-size:29px;
- text-decoration:none;
- z-index:999;
- box-shadow:0 5px 25px #000
+position:fixed;
+
+right:20px;
+bottom:20px;
+
+width:62px;
+height:62px;
+
+border-radius:50%;
+
+background:#25d366;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:29px;
+
+text-decoration:none;
+
+z-index:1000;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.45);
+
+transition:.3s;
 }
 
-@media(max-width:900px){
+.whatsapp:hover{
+transform:scale(1.08);
+}
 
- .services,
- .steps,
- .features{
-   grid-template-columns:repeat(2,1fr)
- }
+/* ===== RESPONSIVE ===== */
 
- .pricing{
-   grid-template-columns:1fr
- }
+@media(max-width:950px){
 
- .price-card.popular{
-   transform:none
- }
+.hero{
+grid-template-columns:1fr;
+
+text-align:center;
+}
+
+.hero-text{
+margin:auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-visual{
+margin-top:20px;
+}
+
+.services{
+grid-template-columns:repeat(2,1fr);
+}
+
+.steps{
+grid-template-columns:repeat(2,1fr);
+}
+
+.trust{
+grid-template-columns:repeat(2,1fr);
+}
+
+.pricing{
+grid-template-columns:1fr;
+max-width:500px;
+}
+
+.testimonials{
+grid-template-columns:1fr;
+max-width:500px;
+}
 
 }
 
 @media(max-width:600px){
 
- nav{display:none}
+header{
+padding:13px 5%;
+}
 
- section{
-   padding:70px 5%
- }
+nav{
+display:none;
+}
 
- .services,
- .steps,
- .features{
-   grid-template-columns:1fr
- }
+.logo{
+font-size:18px;
+}
 
- .hero{
-   padding-left:5%;
-   padding-right:5%
- }
+.logo-icon{
+width:38px;
+height:38px;
+}
+
+section{
+padding:75px 5%;
+}
+
+.hero{
+padding:130px 5% 70px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.services{
+grid-template-columns:1fr;
+}
+
+.steps{
+grid-template-columns:1fr;
+}
+
+.trust{
+grid-template-columns:1fr;
+}
+
+.phone{
+width:270px;
+}
+
+.contact-box h2{
+font-size:31px;
+}
+
+.whatsapp{
+width:57px;
+height:57px;
+right:15px;
+bottom:15px;
+}
 
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
-  <div class="logo">
+<div class="logo">
 
-    <div class="logo-icon">◎</div>
+<div class="logo-icon">◎</div>
 
-    <span>Insta Growth Hub</span>
+<span>Insta Growth Hub</span>
 
-  </div>
+</div>
 
-  <nav>
+<nav>
 
-    <a href="#home">Home</a>
+<a href="#home">Home</a>
 
-    <a href="#services">Services</a>
+<a href="#services">Services</a>
 
-    <a href="#pricing">Packages</a>
+<a href="#pricing">Packages</a>
 
-    <a href="#faq">FAQ</a>
+<a href="#about">Why Us</a>
 
-    <a href="#contact">Contact</a>
+<a href="#faq">FAQ</a>
 
-  </nav>
+<a href="#contact">Contact</a>
+
+</nav>
 
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero" id="home">
 
-  <div>
+<div>
 
-    <div class="badge">
-      🚀 Instagram Services & Support
-    </div>
+<div class="badge">
+🚀 Instagram Services & Support
+</div>
 
-    <h1>
-      Grow Your<br>
-      <span class="gradient">Instagram Presence</span>
-    </h1>
+<h1>
 
-    <p>
-      Simple and professional Instagram services for creators,
-      brands and businesses. Choose a package and contact us directly
-      through WhatsApp.
-    </p>
+Build Your
 
-    <a
-      class="btn"
-      href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20to%20place%20an%20order."
-      target="_blank">
+<br>
 
-      Order Now 🚀
+<span class="gradient">
+Instagram Presence
+</span>
 
-    </a>
+</h1>
 
-  </div>
+<p class="hero-text">
+
+Professional Instagram service packages with simple ordering
+and direct WhatsApp support. Choose a package, send your details
+and discuss your order with our support team.
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+class="btn primary"
+href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20to%20place%20an%20order."
+target="_blank">
+
+Order on WhatsApp 💬
+
+</a>
+
+<a
+class="btn secondary"
+href="#pricing">
+
+View Packages ↓
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PHONE VISUAL -->
+
+<div class="hero-visual">
+
+<div class="phone">
+
+<div class="phone-screen">
+
+<div class="phone-top">
+
+<div class="profile">
+
+<div class="avatar">
+IG
+</div>
+
+<div>
+
+<strong>Insta Growth</strong>
+
+<small>@instagrowthhub</small>
+
+</div>
+
+</div>
+
+<span>•••</span>
+
+</div>
+
+
+<div class="stats">
+
+<div>
+
+<strong>100+</strong>
+
+<span>Packages</span>
+
+</div>
+
+<div>
+
+<strong>24/7</strong>
+
+<span>Support</span>
+
+</div>
+
+<div>
+
+<strong>⚡</strong>
+
+<span>Fast Reply</span>
+
+</div>
+
+</div>
+
+
+<div class="post">
+
+◎
+
+</div>
+
+
+<div class="phone-actions">
+
+<span>♡</span>
+
+<span>💬</span>
+
+<span>↗</span>
+
+<span>🔖</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
+
+<!-- SERVICES -->
 
 <section id="services">
 
-  <div class="title">
+<div class="section-title">
 
-    <h2>Our Services</h2>
+<h2>Our Services</h2>
 
-    <p>Choose the service you need.</p>
+<p>
+Choose the service that matches your Instagram needs.
+</p>
 
-  </div>
-
-
-  <div class="services">
-
-    <div class="card">
-
-      <div class="icon">👥</div>
-
-      <h3>Followers</h3>
-
-      <p>
-        Instagram follower packages with clear delivery details.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="card">
-
-      <div class="icon">❤️</div>
-
-      <h3>Likes</h3>
-
-      <p>
-        Packages designed to increase post engagement.
-      </p>
-
-    </div>
+<div class="services">
 
 
-    <div class="card">
+<div class="card">
 
-      <div class="icon">👀</div>
+<div class="icon">👥</div>
 
-      <h3>Views</h3>
+<h3>Followers</h3>
 
-      <p>
-        Increase visibility of your Instagram content.
-      </p>
+<p>
+Follower packages with clear quantities and pricing.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="card">
+<div class="card">
 
-      <div class="icon">📈</div>
+<div class="icon">❤️</div>
 
-      <h3>Growth</h3>
+<h3>Likes</h3>
 
-      <p>
-        Social media support packages for creators and brands.
-      </p>
+<p>
+Engagement packages for your Instagram content.
+</p>
 
-    </div>
+</div>
 
-  </div>
+
+<div class="card">
+
+<div class="icon">👀</div>
+
+<h3>Views</h3>
+
+<p>
+Packages designed to help increase content visibility.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📈</div>
+
+<h3>Growth Support</h3>
+
+<p>
+Simple social media support for creators and businesses.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
+
+<!-- PRICING -->
 
 <section id="pricing">
 
-  <div class="title">
+<div class="section-title">
 
-    <h2>Popular Packages</h2>
+<h2>Popular Packages</h2>
 
-    <p>
-      Choose the package that fits your needs.
-    </p>
+<p>
+Simple packages with transparent pricing.
+</p>
 
-  </div>
-
-
-  <div class="pricing">
+</div>
 
 
-    <!-- STARTER -->
-
-    <div class="price-card">
-
-      <h3>Starter</h3>
-
-      <div class="price">
-        Rs. 200
-      </div>
-
-      <ul>
-
-        <li>100 Followers</li>
-
-        <li>Fast Support</li>
-
-        <li>Order Assistance</li>
-
-      </ul>
-
-      <a
-        class="btn"
-        href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Starter%20package%20of%20100%20Followers%20for%20Rs.%20200."
-        target="_blank">
-
-        Order Now
-
-      </a>
-
-    </div>
+<div class="pricing">
 
 
-    <!-- PRO -->
+<!-- STARTER -->
 
-    <div class="price-card popular">
+<div class="price-card">
 
-      <div class="popular-tag">
-        MOST POPULAR
-      </div>
+<h3>Starter</h3>
 
-      <h3>Pro</h3>
+<div class="price">
+Rs. 299
+</div>
 
-      <div class="price">
-        Rs. 600
-      </div>
+<ul>
 
-      <ul>
+<li>100 Followers</li>
 
-        <li>500 Followers</li>
+<li>Fast Support</li>
 
-        <li>Fast Support</li>
+<li>Order Assistance</li>
 
-        <li>Order Assistance</li>
+</ul>
 
-      </ul>
+<a
+class="btn primary order-btn"
 
-      <a
-        class="btn"
-        href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Pro%20package%20of%20500%20Followers%20for%20Rs.%20600."
-        target="_blank">
+href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Starter%20package%3A%20100%20Followers%20for%20Rs.%20299."
 
-        Order Now
+target="_blank">
 
-      </a>
+Order Starter
 
-    </div>
+</a>
+
+</div>
 
 
-    <!-- PREMIUM -->
+<!-- PRO -->
 
-    <div class="price-card">
+<div class="price-card popular">
 
-      <h3>Premium</h3>
+<div class="popular-tag">
+MOST POPULAR
+</div>
 
-      <div class="price">
-        Rs. 1,300
-      </div>
+<h3>Pro</h3>
 
-      <ul>
+<div class="price">
+Rs. 599
+</div>
 
-        <li>1,000 Followers</li>
+<ul>
 
-        <li>Priority Support</li>
+<li>500 Followers</li>
 
-        <li>Order Assistance</li>
+<li>Fast Support</li>
 
-      </ul>
+<li>Order Assistance</li>
 
-      <a
-        class="btn"
-        href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Premium%20package%20of%201000%20Followers%20for%20Rs.%201300."
-        target="_blank">
+</ul>
 
-        Order Now
+<a
+class="btn primary order-btn"
 
-      </a>
+href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Pro%20package%3A%20500%20Followers%20for%20Rs.%20599."
 
-    </div>
+target="_blank">
+
+Order Pro
+
+</a>
+
+</div>
 
 
-  </div>
+<!-- PREMIUM -->
+
+<div class="price-card">
+
+<h3>Premium</h3>
+
+<div class="price">
+Rs. 1,000
+</div>
+
+<ul>
+
+<li>1,000 Followers</li>
+
+<li>Priority Support</li>
+
+<li>Order Assistance</li>
+
+</ul>
+
+<a
+class="btn primary order-btn"
+
+href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Premium%20package%3A%201000%20Followers%20for%20Rs.%201000."
+
+target="_blank">
+
+Order Premium
+
+</a>
+
+</div>
+
+
+</div>
 
 </section>
 
+
+<!-- HOW IT WORKS -->
 
 <section>
 
-  <div class="title">
+<div class="section-title">
 
-    <h2>How It Works</h2>
+<h2>How It Works</h2>
 
-    <p>
-      Ordering is simple.
-    </p>
+<p>
+Ordering is simple and straightforward.
+</p>
 
-  </div>
-
-
-  <div class="steps">
+</div>
 
 
-    <div class="step">
-
-      <div class="number">1</div>
-
-      <h3>Choose</h3>
-
-      <p>
-        Select the service or package you want.
-      </p>
-
-    </div>
+<div class="steps">
 
 
-    <div class="step">
+<div class="step">
 
-      <div class="number">2</div>
+<div class="number">1</div>
 
-      <h3>Contact</h3>
+<h3>Choose</h3>
 
-      <p>
-        Click Order Now and contact us on WhatsApp.
-      </p>
+<p>
+Select your preferred service or package.
+</p>
 
-    </div>
-
-
-    <div class="step">
-
-      <div class="number">3</div>
-
-      <h3>Confirm</h3>
-
-      <p>
-        Confirm your order details with our support.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="step">
+<div class="step">
 
-      <div class="number">4</div>
+<div class="number">2</div>
 
-      <h3>Delivery</h3>
+<h3>Contact</h3>
 
-      <p>
-        Your selected service is processed according to the package.
-      </p>
+<p>
+Click the WhatsApp order button.
+</p>
 
-    </div>
+</div>
 
 
-  </div>
+<div class="step">
+
+<div class="number">3</div>
+
+<h3>Confirm</h3>
+
+<p>
+Discuss and confirm your order details.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">4</div>
+
+<h3>Process</h3>
+
+<p>
+Your order is processed according to the selected package.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
+
+<!-- TRUST -->
+
+<section id="about">
+
+<div class="section-title">
+
+<h2>Why Choose Us?</h2>
+
+<p>
+A simple service experience focused on communication and clarity.
+</p>
+
+</div>
+
+
+<div class="trust">
+
+
+<div class="trust-card">
+
+<div class="trust-icon">⚡</div>
+
+<h3>Quick Support</h3>
+
+<p>
+Direct WhatsApp communication for questions and orders.
+</p>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">🔒</div>
+
+<h3>Privacy First</h3>
+
+<p>
+We never ask you to share your Instagram password.
+</p>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">💬</div>
+
+<h3>Easy Ordering</h3>
+
+<p>
+Choose a package and contact support with one tap.
+</p>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">📦</div>
+
+<h3>Clear Packages</h3>
+
+<p>
+Packages and prices are displayed clearly before ordering.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CUSTOMER FEEDBACK -->
 
 <section>
 
-  <div class="title">
+<div class="section-title">
 
-    <h2>Why Choose Us?</h2>
+<h2>Customer Feedback</h2>
 
-    <p>
-      Simple service with easy communication.
-    </p>
+<p>
+Add your genuine customer feedback here as your business receives reviews.
+</p>
 
-  </div>
-
-
-  <div class="features">
+</div>
 
 
-    <div class="feature">
-
-      <div>⚡</div>
-
-      <h3>Fast Support</h3>
-
-      <p>
-        Quick communication through WhatsApp.
-      </p>
-
-    </div>
+<div class="testimonials">
 
 
-    <div class="feature">
+<div class="testimonial">
 
-      <div>🔒</div>
+<div class="stars">
+★★★★★
+</div>
 
-      <h3>Privacy</h3>
+<p>
+“Add a real customer review here.”
+</p>
 
-      <p>
-        We never ask for your Instagram password.
-      </p>
+<strong>Customer Review</strong>
 
-    </div>
+<small>Verified customer</small>
 
-
-    <div class="feature">
-
-      <div>💬</div>
-
-      <h3>WhatsApp</h3>
-
-      <p>
-        Easy direct contact for orders.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="feature">
+<div class="testimonial">
 
-      <div>📦</div>
+<div class="stars">
+★★★★★
+</div>
 
-      <h3>Clear Packages</h3>
+<p>
+“Add your genuine feedback here.”
+</p>
 
-      <p>
-        Simple packages with transparent pricing.
-      </p>
+<strong>Customer Review</strong>
 
-    </div>
+<small>Verified customer</small>
+
+</div>
 
 
-  </div>
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Add another genuine customer experience here.”
+</p>
+
+<strong>Customer Review</strong>
+
+<small>Verified customer</small>
+
+</div>
+
+
+</div>
 
 </section>
 
+
+<!-- FAQ -->
 
 <section id="faq">
 
-  <div class="title">
+<div class="section-title">
 
-    <h2>FAQ</h2>
+<h2>Frequently Asked Questions</h2>
 
-    <p>
-      Frequently asked questions.
-    </p>
+<p>
+Everything you need to know before placing an order.
+</p>
 
-  </div>
-
-
-  <div class="faq">
+</div>
 
 
-    <details>
-
-      <summary>
-        How can I place an order?
-      </summary>
-
-      <p>
-        Choose a package and click the Order Now button.
-        WhatsApp will open with a ready-made message.
-      </p>
-
-    </details>
+<div class="faq">
 
 
-    <details>
+<details>
 
-      <summary>
-        Do you need my Instagram password?
-      </summary>
+<summary>
+How can I place an order?
+</summary>
 
-      <p>
-        No. Never share your Instagram password with a service provider.
-      </p>
+<p>
+Choose your preferred package and click the WhatsApp button.
+A message will open automatically with your selected package.
+</p>
 
-    </details>
-
-
-    <details>
-
-      <summary>
-        How can I contact support?
-      </summary>
-
-      <p>
-        You can contact Insta Growth Hub directly through WhatsApp.
-      </p>
-
-    </details>
+</details>
 
 
-    <details>
+<details>
 
-      <summary>
-        Can I choose another package?
-      </summary>
+<summary>
+Do you need my Instagram password?
+</summary>
 
-      <p>
-        Yes. Contact us on WhatsApp to discuss the available packages
-        and current pricing.
-      </p>
+<p>
+No. Never share your Instagram password with a service provider.
+</p>
 
-    </details>
+</details>
 
 
-  </div>
+<details>
+
+<summary>
+How can I contact support?
+</summary>
+
+<p>
+You can contact Insta Growth Hub directly through WhatsApp.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Can I ask about other packages?
+</summary>
+
+<p>
+Yes. Contact us through WhatsApp to discuss currently available
+services and pricing.
+</p>
+
+</details>
+
+
+</div>
 
 </section>
 
+
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
-  <div class="title">
+<div class="contact-box">
 
-    <h2>
-      Ready to Get Started? 🚀
-    </h2>
+<h2>
+Ready to Get Started? 🚀
+</h2>
 
-    <p>
-      WhatsApp: <strong>0341 3150589</strong>
-    </p>
+<p>
 
-    <a
-      class="btn"
-      href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20more%20information%20about%20your%20services."
-      target="_blank">
+Choose your package and contact us directly on WhatsApp.
 
-      Chat on WhatsApp 💬
+<br><br>
 
-    </a>
+WhatsApp:
+<strong>0341 3150589</strong>
 
-  </div>
+</p>
+
+
+<a
+class="btn primary"
+
+href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20more%20information%20about%20your%20services."
+
+target="_blank">
+
+Chat on WhatsApp 💬
+
+</a>
+
+</div>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-  © 2026 Insta Growth Hub — All Rights Reserved.
+<div class="footer-brand">
+Insta Growth Hub
+</div>
+
+<br>
+
+© 2026 Insta Growth Hub — All Rights Reserved.
+
+<br><br>
+
+WhatsApp: 0341 3150589
 
 </footer>
 
 
-<a
-  class="whatsapp"
-  href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20to%20place%20an%20order."
-  target="_blank"
-  aria-label="WhatsApp">
+<!-- FLOATING WHATSAPP -->
 
-  💬
+<a
+class="whatsapp"
+
+href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20to%20place%20an%20order."
+
+target="_blank"
+
+aria-label="WhatsApp">
+
+💬
 
 </a>
 
 
 </body>
-       </html>
+ </html>
