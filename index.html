@@ -1,279 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insta Growth Hub | Instagram Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insta Growth Hub</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#080812;color:#fff;overflow-x:hidden}
 
-    body {
-      background: #0b0b12;
-      color: white;
-    }
+header{
+ position:fixed;top:0;left:0;width:100%;z-index:1000;
+ padding:16px 7%;display:flex;align-items:center;
+ justify-content:space-between;background:rgba(8,8,18,.88);
+ backdrop-filter:blur(15px);border-bottom:1px solid #24243a
+}
 
-    header {
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #11111b;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+.logo{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:bold}
+.logo-icon{
+ width:40px;height:40px;border-radius:12px;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#ff0055,#ff8a00,#833ab4);
+ box-shadow:0 0 20px #833ab455;font-size:21px
+}
+.logo span{
+ background:linear-gradient(90deg,#ff4d88,#a66cff);
+ -webkit-background-clip:text;color:transparent
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      background: linear-gradient(45deg, #ff2d55, #ff8a00, #8a2be2);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+nav a{color:#ddd;text-decoration:none;margin-left:25px;font-size:14px}
+nav a:hover{color:#ff4d88}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 15px;
-    }
+.hero{
+ min-height:100vh;padding:150px 7% 80px;
+ display:flex;align-items:center;justify-content:center;text-align:center;
+ background:
+ radial-gradient(circle at 50% 20%,#6b1c8d55,transparent 35%),
+ radial-gradient(circle at 10% 80%,#ff005522,transparent 30%),#080812
+}
 
-    nav a:hover {
-      color: #ff4d8d;
-    }
+.badge{
+ display:inline-block;padding:9px 18px;border:1px solid #ff4d8855;
+ border-radius:30px;background:#ff4d8810;color:#ff8bb1;
+ font-size:13px;margin-bottom:25px
+}
 
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      background:
-        radial-gradient(circle at top, #32164d, transparent 45%),
-        #0b0b12;
-    }
+.hero h1{font-size:clamp(42px,7vw,75px);line-height:1.05;margin-bottom:22px}
+.gradient{
+ background:linear-gradient(90deg,#ff2d55,#ff8a00,#a855f7);
+ -webkit-background-clip:text;color:transparent
+}
+.hero p{max-width:650px;margin:auto;color:#aaa;line-height:1.7;font-size:17px}
 
-    .hero h1 {
-      font-size: 55px;
-      margin-bottom: 20px;
-    }
+.btn{
+ display:inline-block;margin-top:30px;padding:14px 28px;
+ border-radius:30px;background:linear-gradient(90deg,#ff2d55,#8b35d6);
+ color:#fff;text-decoration:none;font-weight:bold;
+ box-shadow:0 10px 30px #ff2d5533;transition:.3s
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 15px 35px #ff2d5555}
 
-    .hero h1 span {
-      background: linear-gradient(45deg, #ff2d55, #ff8a00, #8a2be2);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+section{padding:90px 7%}
+.title{text-align:center;margin-bottom:45px}
+.title h2{font-size:38px;margin-bottom:10px}
+.title p{color:#888}
 
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      color: #bbb;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.services{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:20px
+}
+.card{
+ background:linear-gradient(145deg,#151522,#10101a);
+ border:1px solid #29293c;border-radius:22px;padding:30px 20px;
+ text-align:center;transition:.35s
+}
+.card:hover{transform:translateY(-9px);border-color:#ff4d88}
+.icon{font-size:43px;margin-bottom:18px}
+.card h3{margin-bottom:10px;font-size:20px}
+.card p{color:#999;font-size:14px;line-height:1.6}
 
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 30px;
-      border-radius: 30px;
-      background: linear-gradient(45deg, #ff2d55, #8a2be2);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: .3s;
-    }
+.pricing{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:25px;
+ max-width:1050px;margin:auto
+}
+.price-card{
+ background:#12121d;border:1px solid #29293d;border-radius:25px;
+ padding:35px 25px;text-align:center;position:relative
+}
+.price-card.popular{border:2px solid #ff4380;transform:scale(1.04)}
+.popular-tag{
+ position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+ background:#ff4380;padding:6px 18px;border-radius:20px;
+ font-size:12px;font-weight:bold
+}
+.price-card h3{font-size:23px;margin-bottom:15px}
+.price{font-size:38px;font-weight:bold;color:#ff5d92;margin-bottom:20px}
+.price-card ul{list-style:none;color:#aaa;line-height:2}
+.price-card li::before{content:"✓ ";color:#ff5d92}
 
-    .btn:hover {
-      transform: translateY(-3px);
-    }
+.steps{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:20px
+}
+.step{text-align:center;padding:25px}
+.number{
+ width:55px;height:55px;border-radius:50%;margin:0 auto 18px;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#ff2d55,#833ab4);
+ font-weight:bold;font-size:20px
+}
+.step h3{margin-bottom:10px}
+.step p{color:#888;font-size:14px;line-height:1.5}
 
-    section {
-      padding: 70px 8%;
-    }
+.features{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+ max-width:1100px;margin:auto
+}
+.feature{
+ padding:25px;background:#12121d;border-radius:18px;
+ border:1px solid #24243a;text-align:center
+}
+.feature div{font-size:30px;margin-bottom:10px}
+.feature p{color:#999;font-size:13px;margin-top:7px}
 
-    .title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+.faq{max-width:850px;margin:auto}
+details{
+ background:#12121d;border:1px solid #29293c;
+ border-radius:15px;margin-bottom:12px;padding:20px
+}
+summary{cursor:pointer;font-weight:bold}
+details p{color:#999;margin-top:15px;line-height:1.6}
 
-    .title h2 {
-      font-size: 35px;
-    }
+.contact{
+ text-align:center;background:
+ radial-gradient(circle at center,#4d145c55,transparent 45%),#10101a
+}
+.contact p{color:#999;margin-top:10px}
 
-    .title p {
-      color: #999;
-      margin-top: 10px;
-    }
+footer{
+ padding:30px;text-align:center;background:#050509;color:#666;font-size:13px
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
+.whatsapp{
+ position:fixed;right:20px;bottom:20px;width:60px;height:60px;
+ border-radius:50%;background:#25D366;display:flex;
+ align-items:center;justify-content:center;font-size:29px;
+ text-decoration:none;z-index:999;box-shadow:0 5px 25px #000
+}
 
-    .card {
-      background: #151520;
-      border: 1px solid #272735;
-      padding: 30px 20px;
-      border-radius: 18px;
-      text-align: center;
-      transition: .3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #ff3d81;
-    }
-
-    .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #aaa;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .package {
-      background: #151520;
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      border: 1px solid #292938;
-    }
-
-    .package h3 {
-      font-size: 23px;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      font-size: 32px;
-      font-weight: bold;
-      color: #ff4d88;
-      margin-bottom: 20px;
-    }
-
-    .package ul {
-      list-style: none;
-      color: #bbb;
-      line-height: 2;
-    }
-
-    .package .btn {
-      margin-top: 20px;
-      padding: 11px 25px;
-    }
-
-    .about {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .about p {
-      color: #aaa;
-      line-height: 1.8;
-    }
-
-    .contact {
-      text-align: center;
-      background: #11111b;
-    }
-
-    .contact p {
-      color: #aaa;
-      margin-top: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #777;
-      background: #08080d;
-      font-size: 14px;
-    }
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      text-decoration: none;
-      z-index: 999;
-      box-shadow: 0 5px 20px #000;
-    }
-
-    @media (max-width: 900px) {
-      .services {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .packages {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        display: none;
-      }
-
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-    }
-  </style>
+@media(max-width:900px){
+ .services,.steps,.features{grid-template-columns:repeat(2,1fr)}
+ .pricing{grid-template-columns:1fr}
+ .price-card.popular{transform:none}
+}
+@media(max-width:600px){
+ nav{display:none}
+ section{padding:70px 5%}
+ .services,.steps,.features{grid-template-columns:1fr}
+ .hero{padding-left:5%;padding-right:5%}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Insta Growth Hub</div>
+  <div class="logo">
+    <div class="logo-icon">◎</div>
+    <span>Insta Growth Hub</span>
+  </div>
 
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
-    <a href="#packages">Packages</a>
+    <a href="#pricing">Packages</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -281,23 +181,32 @@
 
 <section class="hero" id="home">
   <div>
-    <h1>Grow Your <span>Instagram</span></h1>
+    <div class="badge">🚀 Instagram Services & Support</div>
+
+    <h1>
+      Grow Your<br>
+      <span class="gradient">Instagram Presence</span>
+    </h1>
 
     <p>
-      Professional Instagram services for creators, brands and businesses.
-      Improve your social presence with simple and reliable service packages.
+      Simple and professional Instagram services for creators,
+      brands and businesses. Choose a package and contact us directly
+      through WhatsApp.
     </p>
 
-    <a href="#packages" class="btn">View Packages 🚀</a>
+    <a class="btn"
+       href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20to%20place%20an%20order."
+       target="_blank">
+       Order Now 🚀
+    </a>
   </div>
 </section>
 
 
 <section id="services">
-
   <div class="title">
     <h2>Our Services</h2>
-    <p>Choose the service that fits your Instagram goals.</p>
+    <p>Choose the service you need.</p>
   </div>
 
   <div class="services">
@@ -305,93 +214,87 @@
     <div class="card">
       <div class="icon">👥</div>
       <h3>Followers</h3>
-      <p>Instagram follower packages for your profile.</p>
+      <p>Instagram follower packages with clear delivery details.</p>
     </div>
 
     <div class="card">
       <div class="icon">❤️</div>
       <h3>Likes</h3>
-      <p>Increase engagement on your Instagram posts.</p>
+      <p>Packages designed to increase post engagement.</p>
     </div>
 
     <div class="card">
       <div class="icon">👀</div>
       <h3>Views</h3>
-      <p>Boost visibility on your Instagram content.</p>
+      <p>Increase visibility of your Instagram content.</p>
     </div>
 
     <div class="card">
       <div class="icon">📈</div>
       <h3>Growth</h3>
-      <p>Social media growth packages for creators.</p>
+      <p>Social media support packages for creators and brands.</p>
     </div>
 
   </div>
 </section>
 
 
-<section id="packages">
-
+<section id="pricing">
   <div class="title">
     <h2>Popular Packages</h2>
-    <p>Demo prices — you can edit them anytime.</p>
+    <p>Demo pricing — edit these amounts whenever you want.</p>
   </div>
 
-  <div class="packages">
+  <div class="pricing">
 
-    <div class="package">
+    <div class="price-card">
       <h3>Starter</h3>
       <div class="price">Rs. 299</div>
-
       <ul>
         <li>1,000 Followers</li>
-        <li>Fast Delivery</li>
-        <li>Order Support</li>
+        <li>Fast Support</li>
+        <li>Order Assistance</li>
       </ul>
 
-      <a
-        class="btn"
-        href="https://wa.me/923413150589"
-        target="_blank">
-        Order Now
+      <a class="btn"
+         href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Starter%20package."
+         target="_blank">
+         Order Now
       </a>
     </div>
 
 
-    <div class="package">
-      <h3>Popular</h3>
+    <div class="price-card popular">
+      <div class="popular-tag">MOST POPULAR</div>
+      <h3>Pro</h3>
       <div class="price">Rs. 599</div>
-
       <ul>
         <li>5,000 Followers</li>
-        <li>Fast Delivery</li>
-        <li>Order Support</li>
+        <li>Fast Support</li>
+        <li>Order Assistance</li>
       </ul>
 
-      <a
-        class="btn"
-        href="https://wa.me/923413150589"
-        target="_blank">
-        Order Now
+      <a class="btn"
+         href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Pro%20package."
+         target="_blank">
+         Order Now
       </a>
     </div>
 
 
-    <div class="package">
+    <div class="price-card">
       <h3>Premium</h3>
       <div class="price">Rs. 999</div>
-
       <ul>
         <li>10,000 Followers</li>
-        <li>Fast Delivery</li>
         <li>Priority Support</li>
+        <li>Order Assistance</li>
       </ul>
 
-      <a
-        class="btn"
-        href="https://wa.me/923413150589"
-        target="_blank">
-        Order Now
+      <a class="btn"
+         href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20the%20Premium%20package."
+         target="_blank">
+         Order Now
       </a>
     </div>
 
@@ -399,33 +302,121 @@
 </section>
 
 
-<section class="about">
-
+<section>
   <div class="title">
-    <h2>Why Choose Us?</h2>
+    <h2>How It Works</h2>
+    <p>Ordering is simple.</p>
   </div>
 
-  <p>
-    Insta Growth Hub provides straightforward social media services
-    with clear packages and customer support. Choose your package,
-    contact us on WhatsApp and send your order details.
-  </p>
+  <div class="steps">
 
+    <div class="step">
+      <div class="number">1</div>
+      <h3>Choose</h3>
+      <p>Select the service or package you want.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">2</div>
+      <h3>Contact</h3>
+      <p>Click Order Now and contact us on WhatsApp.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">3</div>
+      <h3>Confirm</h3>
+      <p>Confirm your order details with our support.</p>
+    </div>
+
+    <div class="step">
+      <div class="number">4</div>
+      <h3>Delivery</h3>
+      <p>Your selected service is processed according to the package.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="title">
+    <h2>Why Choose Us?</h2>
+    <p>Simple service with easy communication.</p>
+  </div>
+
+  <div class="features">
+
+    <div class="feature">
+      <div>⚡</div>
+      <h3>Fast Support</h3>
+      <p>Quick communication through WhatsApp.</p>
+    </div>
+
+    <div class="feature">
+      <div>🔒</div>
+      <h3>Privacy</h3>
+      <p>We never ask for your Instagram password.</p>
+    </div>
+
+    <div class="feature">
+      <div>💬</div>
+      <h3>WhatsApp</h3>
+      <p>Easy direct contact for orders.</p>
+    </div>
+
+    <div class="feature">
+      <div>📦</div>
+      <h3>Clear Packages</h3>
+      <p>Simple packages with transparent pricing.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="faq">
+  <div class="title">
+    <h2>FAQ</h2>
+    <p>Frequently asked questions.</p>
+  </div>
+
+  <div class="faq">
+
+    <details>
+      <summary>How can I place an order?</summary>
+      <p>Choose a package and click the Order Now button. WhatsApp will open with a ready-made message.</p>
+    </details>
+
+    <details>
+      <summary>Do you need my Instagram password?</summary>
+      <p>No. Never share your Instagram password with a service provider.</p>
+    </details>
+
+    <details>
+      <summary>How can I contact support?</summary>
+      <p>You can contact Insta Growth Hub directly through WhatsApp.</p>
+    </details>
+
+    <details>
+      <summary>Can I choose another package?</summary>
+      <p>Yes. Contact us on WhatsApp to discuss the available packages and current pricing.</p>
+    </details>
+
+  </div>
 </section>
 
 
 <section class="contact" id="contact">
 
   <div class="title">
-    <h2>Contact Us 📲</h2>
+    <h2>Ready to Get Started? 🚀</h2>
 
     <p>WhatsApp: <strong>0341 3150589</strong></p>
 
-    <a
-      class="btn"
-      href="https://wa.me/923413150589"
-      target="_blank">
-      Chat on WhatsApp 💬
+    <a class="btn"
+       href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20more%20information%20about%20your%20services."
+       target="_blank">
+       Chat on WhatsApp 💬
     </a>
   </div>
 
@@ -433,18 +424,16 @@
 
 
 <footer>
-  © 2026 Insta Growth Hub. All Rights Reserved.
+  © 2026 Insta Growth Hub — All Rights Reserved.
 </footer>
 
 
-<!-- Floating WhatsApp Button -->
-<a
-  class="whatsapp"
-  href="https://wa.me/923413150589"
-  target="_blank"
-  aria-label="Chat on WhatsApp">
-  💬
+<a class="whatsapp"
+   href="https://wa.me/923413150589?text=Hello%20Insta%20Growth%20Hub%2C%20I%20want%20to%20place%20an%20order."
+   target="_blank"
+   aria-label="WhatsApp">
+   💬
 </a>
 
 </body>
-  </html>
+    </html>
